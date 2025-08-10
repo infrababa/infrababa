@@ -1,4 +1,4 @@
-# 👨‍💻 Abubakar Abdulai Baba | DevOps & Cloud Infrastructure Engineer
+# 👨‍💻 Baba Abu | DevOps & Cloud Infrastructure Engineer
 
 ## 🚀 About Me
 Passionate DevOps Engineer with extensive experience in designing, implementing, and managing cloud-native infrastructure. I specialize in building robust CI/CD pipelines, implementing Infrastructure as Code, and orchestrating containerized applications at scale. My focus is on creating automated, secure, and highly available systems that enable teams to deliver value faster.
@@ -58,14 +58,6 @@ Passionate DevOps Engineer with extensive experience in designing, implementing,
 ## 📫 Connect With Me
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)]()
 [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=twitter&logoColor=white)](#)
-[![Email](https://img.shields.io/badge/Email-abudev22%40gmail.com-%23D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:)
+[![Email](https://img.shields.io/badge/Email-infrababa.dev0gmail.com-%23D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:)
 
----
-### 📊 Weekly Development Breakdown
-```text
-Infrastructure as Code    █████████░░   45%
-CI/CD Pipelines          ████████░░░   40%
-Cloud Architecture       ██████░░░░░   30%
-Monitoring & Logging     █████░░░░░░   25%
-Security & Compliance    ████░░░░░░░   20%
-```
+
