@@ -58,6 +58,6 @@ Passionate DevOps Engineer with extensive experience in designing, implementing,
 ## 📫 Connect With Me
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)]()
 [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?style=for-the-badge&logo=twitter&logoColor=white)](#)
-[![Email](https://img.shields.io/badge/Email-infrababa.dev0gmail.com-%23D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:)
+[![Email](https://img.shields.io/badge/Email-infrababa.dev@gmail.com-%23D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:)
 
 
