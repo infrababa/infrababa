@@ -1,0 +1,213 @@
+{
+ "actions": [],
+ "autoname": "format:{farm_location}-{plot_number}",
+ "creation": "2025-01-06 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "farm_location",
+  "plot_number",
+  "plot_name",
+  "column_break_4",
+  "plot_size",
+  "size_unit",
+  "plot_status",
+  "crop_information_section",
+  "current_crop",
+  "last_planting_date",
+  "column_break_11",
+  "expected_harvest_date",
+  "plot_supervisor",
+  "plot_characteristics_section",
+  "soil_type",
+  "soil_ph",
+  "column_break_16",
+  "drainage_condition",
+  "sun_exposure",
+  "history_section",
+  "cropping_history",
+  "notes_section",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "farm_location",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Farm Location",
+   "options": "Farm Location",
+   "reqd": 1
+  },
+  {
+   "fieldname": "plot_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Plot Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "plot_name",
+   "fieldtype": "Data",
+   "label": "Plot Name"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "plot_size",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Plot Size",
+   "reqd": 1
+  },
+  {
+   "default": "Hectares",
+   "fieldname": "size_unit",
+   "fieldtype": "Select",
+   "label": "Size Unit",
+   "options": "Hectares\nAcres\nSquare Meters"
+  },
+  {
+   "default": "Available",
+   "fieldname": "plot_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Plot Status",
+   "options": "Available\nPlanted\nHarvesting\nFallow\nUnder Preparation"
+  },
+  {
+   "fieldname": "crop_information_section",
+   "fieldtype": "Section Break",
+   "label": "Current Crop Information"
+  },
+  {
+   "fieldname": "current_crop",
+   "fieldtype": "Link",
+   "label": "Current Crop",
+   "options": "Crop"
+  },
+  {
+   "fieldname": "last_planting_date",
+   "fieldtype": "Date",
+   "label": "Last Planting Date"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "expected_harvest_date",
+   "fieldtype": "Date",
+   "label": "Expected Harvest Date"
+  },
+  {
+   "fieldname": "plot_supervisor",
+   "fieldtype": "Link",
+   "label": "Plot Supervisor",
+   "options": "Cooperative Member"
+  },
+  {
+   "fieldname": "plot_characteristics_section",
+   "fieldtype": "Section Break",
+   "label": "Plot Characteristics"
+  },
+  {
+   "fieldname": "soil_type",
+   "fieldtype": "Select",
+   "label": "Soil Type",
+   "options": "Clay\nSandy\nLoam\nSilt\nPeat\nChalk"
+  },
+  {
+   "fieldname": "soil_ph",
+   "fieldtype": "Float",
+   "label": "Soil pH"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "drainage_condition",
+   "fieldtype": "Select",
+   "label": "Drainage Condition",
+   "options": "Excellent\nGood\nFair\nPoor"
+  },
+  {
+   "fieldname": "sun_exposure",
+   "fieldtype": "Select",
+   "label": "Sun Exposure",
+   "options": "Full Sun\nPartial Shade\nShade"
+  },
+  {
+   "fieldname": "history_section",
+   "fieldtype": "Section Break",
+   "label": "Cropping History"
+  },
+  {
+   "fieldname": "cropping_history",
+   "fieldtype": "Text Editor",
+   "label": "Cropping History"
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes"
+  }
+ ],
+ "links": [],
+ "modified": "2025-01-06 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Farm Operations",
+ "name": "Farm Plot",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Cooperative Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farm Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

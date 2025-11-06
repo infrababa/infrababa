@@ -1,0 +1,186 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2025-01-06 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "member",
+  "member_name",
+  "column_break_4",
+  "distribution_date",
+  "period_from",
+  "period_to",
+  "distribution_details_section",
+  "total_profit_pool",
+  "member_contribution_percentage",
+  "column_break_11",
+  "distribution_amount",
+  "payment_method",
+  "payment_status",
+  "notes_section",
+  "notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "PROF-.YYYY.-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "PROF-.YYYY.-"
+  },
+  {
+   "fieldname": "member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Member",
+   "options": "Cooperative Member",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "member.full_name",
+   "fieldname": "member_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Member Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "distribution_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Distribution Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "period_from",
+   "fieldtype": "Date",
+   "label": "Period From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "period_to",
+   "fieldtype": "Date",
+   "label": "Period To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "distribution_details_section",
+   "fieldtype": "Section Break",
+   "label": "Distribution Details"
+  },
+  {
+   "fieldname": "total_profit_pool",
+   "fieldtype": "Currency",
+   "label": "Total Profit Pool",
+   "read_only": 1
+  },
+  {
+   "description": "Member's share of the profit based on contributions and tier",
+   "fieldname": "member_contribution_percentage",
+   "fieldtype": "Percent",
+   "label": "Member Contribution %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "distribution_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Distribution Amount",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payment_method",
+   "fieldtype": "Select",
+   "label": "Payment Method",
+   "options": "Cash\nMobile Money\nBank Transfer\nReinvest in Cooperative",
+   "reqd": 1
+  },
+  {
+   "default": "Pending",
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "label": "Payment Status",
+   "options": "Pending\nPaid\nReinvested",
+   "reqd": 1
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Profit Distribution",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-01-06 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Cooperative Management",
+ "name": "Profit Distribution",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Cooperative Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Cooperative Member"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "member_name",
+ "track_changes": 1
+}

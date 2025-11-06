@@ -1,0 +1,2 @@
+# List of patches to be executed
+# Format: module_name.patch_name

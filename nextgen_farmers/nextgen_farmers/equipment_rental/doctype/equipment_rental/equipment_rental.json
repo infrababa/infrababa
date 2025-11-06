@@ -1,0 +1,341 @@
+{
+ "actions": [],
+ "autoname": "naming_series:",
+ "creation": "2025-01-06 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "member",
+  "member_name",
+  "column_break_4",
+  "rental_date",
+  "rental_status",
+  "equipment_details_section",
+  "equipment",
+  "equipment_type",
+  "column_break_10",
+  "equipment_condition_before",
+  "rental_period_section",
+  "rental_start_date",
+  "rental_start_time",
+  "rental_end_date",
+  "column_break_16",
+  "rental_end_time",
+  "actual_return_date",
+  "equipment_condition_after",
+  "pricing_section",
+  "rental_rate_per_hour",
+  "rental_rate_per_day",
+  "column_break_23",
+  "total_rental_hours",
+  "total_rental_days",
+  "total_rental_amount",
+  "payment_section",
+  "payment_method",
+  "payment_status",
+  "column_break_30",
+  "deposit_amount",
+  "balance_amount",
+  "delivery_section",
+  "delivery_required",
+  "delivery_location",
+  "column_break_35",
+  "delivery_fee",
+  "operator_provided",
+  "notes_section",
+  "notes",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "RENT-.YYYY.-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "RENT-.YYYY.-"
+  },
+  {
+   "fieldname": "member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Member",
+   "options": "Cooperative Member",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "member.full_name",
+   "fieldname": "member_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Member Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "rental_date",
+   "fieldtype": "Date",
+   "label": "Rental Date",
+   "reqd": 1
+  },
+  {
+   "default": "Booked",
+   "fieldname": "rental_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Rental Status",
+   "options": "Booked\nIn Use\nReturned\nOverdue\nCancelled",
+   "reqd": 1
+  },
+  {
+   "fieldname": "equipment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Equipment Details"
+  },
+  {
+   "fieldname": "equipment",
+   "fieldtype": "Link",
+   "label": "Equipment",
+   "options": "Asset",
+   "reqd": 1
+  },
+  {
+   "fieldname": "equipment_type",
+   "fieldtype": "Data",
+   "label": "Equipment Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "equipment_condition_before",
+   "fieldtype": "Select",
+   "label": "Equipment Condition (Before)",
+   "options": "Excellent\nGood\nFair\nPoor"
+  },
+  {
+   "fieldname": "rental_period_section",
+   "fieldtype": "Section Break",
+   "label": "Rental Period"
+  },
+  {
+   "fieldname": "rental_start_date",
+   "fieldtype": "Date",
+   "label": "Rental Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rental_start_time",
+   "fieldtype": "Time",
+   "label": "Rental Start Time"
+  },
+  {
+   "fieldname": "rental_end_date",
+   "fieldtype": "Date",
+   "label": "Rental End Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rental_end_time",
+   "fieldtype": "Time",
+   "label": "Rental End Time"
+  },
+  {
+   "fieldname": "actual_return_date",
+   "fieldtype": "Datetime",
+   "label": "Actual Return Date"
+  },
+  {
+   "fieldname": "equipment_condition_after",
+   "fieldtype": "Select",
+   "label": "Equipment Condition (After)",
+   "options": "Excellent\nGood\nFair\nPoor\nDamaged"
+  },
+  {
+   "fieldname": "pricing_section",
+   "fieldtype": "Section Break",
+   "label": "Pricing"
+  },
+  {
+   "fieldname": "rental_rate_per_hour",
+   "fieldtype": "Currency",
+   "label": "Rental Rate per Hour"
+  },
+  {
+   "fieldname": "rental_rate_per_day",
+   "fieldtype": "Currency",
+   "label": "Rental Rate per Day"
+  },
+  {
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_rental_hours",
+   "fieldtype": "Float",
+   "label": "Total Rental Hours",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_rental_days",
+   "fieldtype": "Float",
+   "label": "Total Rental Days",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_rental_amount",
+   "fieldtype": "Currency",
+   "label": "Total Rental Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "payment_section",
+   "fieldtype": "Section Break",
+   "label": "Payment"
+  },
+  {
+   "fieldname": "payment_method",
+   "fieldtype": "Select",
+   "label": "Payment Method",
+   "options": "Cash\nMobile Money\nBank Transfer\nCredit"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "label": "Payment Status",
+   "options": "Pending\nPartial\nPaid"
+  },
+  {
+   "fieldname": "column_break_30",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "deposit_amount",
+   "fieldtype": "Currency",
+   "label": "Deposit Amount"
+  },
+  {
+   "fieldname": "balance_amount",
+   "fieldtype": "Currency",
+   "label": "Balance Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivery_section",
+   "fieldtype": "Section Break",
+   "label": "Delivery & Operator"
+  },
+  {
+   "default": "0",
+   "fieldname": "delivery_required",
+   "fieldtype": "Check",
+   "label": "Delivery Required"
+  },
+  {
+   "depends_on": "eval:doc.delivery_required==1",
+   "fieldname": "delivery_location",
+   "fieldtype": "Small Text",
+   "label": "Delivery Location"
+  },
+  {
+   "fieldname": "column_break_35",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.delivery_required==1",
+   "fieldname": "delivery_fee",
+   "fieldtype": "Currency",
+   "label": "Delivery Fee"
+  },
+  {
+   "default": "0",
+   "fieldname": "operator_provided",
+   "fieldtype": "Check",
+   "label": "Operator Provided"
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Equipment Rental",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-01-06 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Equipment Rental",
+ "name": "Equipment Rental",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Cooperative Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Cooperative Member",
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "member_name",
+ "track_changes": 1
+}

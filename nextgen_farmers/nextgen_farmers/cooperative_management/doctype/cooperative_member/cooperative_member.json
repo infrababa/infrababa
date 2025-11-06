@@ -1,0 +1,349 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:member_id",
+ "creation": "2025-01-06 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "member_details_section",
+  "member_id",
+  "first_name",
+  "last_name",
+  "full_name",
+  "column_break_5",
+  "membership_tier",
+  "join_date",
+  "membership_status",
+  "member_photo",
+  "contact_information_section",
+  "email",
+  "mobile_number",
+  "column_break_12",
+  "whatsapp_number",
+  "alternate_contact",
+  "address_section",
+  "address_line_1",
+  "address_line_2",
+  "column_break_17",
+  "city",
+  "region",
+  "postal_code",
+  "identification_section",
+  "id_type",
+  "id_number",
+  "column_break_23",
+  "date_of_birth",
+  "gender",
+  "farming_experience_section",
+  "farming_experience_years",
+  "areas_of_interest",
+  "column_break_28",
+  "skills",
+  "previous_farming_activities",
+  "financial_information_section",
+  "total_contributions",
+  "total_profit_share",
+  "column_break_33",
+  "outstanding_balance",
+  "last_contribution_date",
+  "linked_user_section",
+  "user_id",
+  "portal_access"
+ ],
+ "fields": [
+  {
+   "fieldname": "member_details_section",
+   "fieldtype": "Section Break",
+   "label": "Member Details"
+  },
+  {
+   "fieldname": "member_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Member ID",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "First Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Last Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "membership_tier",
+   "fieldtype": "Link",
+   "label": "Membership Tier",
+   "options": "Membership Tier",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "join_date",
+   "fieldtype": "Date",
+   "label": "Join Date",
+   "reqd": 1
+  },
+  {
+   "default": "Active",
+   "fieldname": "membership_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Membership Status",
+   "options": "Active\nInactive\nSuspended\nPending Approval",
+   "reqd": 1
+  },
+  {
+   "fieldname": "member_photo",
+   "fieldtype": "Attach Image",
+   "label": "Member Photo"
+  },
+  {
+   "fieldname": "contact_information_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Information"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "whatsapp_number",
+   "fieldtype": "Data",
+   "label": "WhatsApp Number"
+  },
+  {
+   "fieldname": "alternate_contact",
+   "fieldtype": "Data",
+   "label": "Alternate Contact"
+  },
+  {
+   "fieldname": "address_section",
+   "fieldtype": "Section Break",
+   "label": "Address"
+  },
+  {
+   "fieldname": "address_line_1",
+   "fieldtype": "Data",
+   "label": "Address Line 1"
+  },
+  {
+   "fieldname": "address_line_2",
+   "fieldtype": "Data",
+   "label": "Address Line 2"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "region",
+   "fieldtype": "Data",
+   "label": "Region"
+  },
+  {
+   "fieldname": "postal_code",
+   "fieldtype": "Data",
+   "label": "Postal Code"
+  },
+  {
+   "fieldname": "identification_section",
+   "fieldtype": "Section Break",
+   "label": "Identification"
+  },
+  {
+   "fieldname": "id_type",
+   "fieldtype": "Select",
+   "label": "ID Type",
+   "options": "National ID\nVoter ID\nPassport\nDriver License"
+  },
+  {
+   "fieldname": "id_number",
+   "fieldtype": "Data",
+   "label": "ID Number"
+  },
+  {
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "Male\nFemale\nOther\nPrefer not to say"
+  },
+  {
+   "fieldname": "farming_experience_section",
+   "fieldtype": "Section Break",
+   "label": "Farming Experience"
+  },
+  {
+   "default": "0",
+   "fieldname": "farming_experience_years",
+   "fieldtype": "Int",
+   "label": "Farming Experience (Years)"
+  },
+  {
+   "fieldname": "areas_of_interest",
+   "fieldtype": "Small Text",
+   "label": "Areas of Interest"
+  },
+  {
+   "fieldname": "column_break_28",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "skills",
+   "fieldtype": "Small Text",
+   "label": "Skills"
+  },
+  {
+   "fieldname": "previous_farming_activities",
+   "fieldtype": "Text",
+   "label": "Previous Farming Activities"
+  },
+  {
+   "fieldname": "financial_information_section",
+   "fieldtype": "Section Break",
+   "label": "Financial Information"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_contributions",
+   "fieldtype": "Currency",
+   "label": "Total Contributions",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_profit_share",
+   "fieldtype": "Currency",
+   "label": "Total Profit Share",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_33",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "outstanding_balance",
+   "fieldtype": "Currency",
+   "label": "Outstanding Balance",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_contribution_date",
+   "fieldtype": "Date",
+   "label": "Last Contribution Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "linked_user_section",
+   "fieldtype": "Section Break",
+   "label": "Portal Access"
+  },
+  {
+   "fieldname": "user_id",
+   "fieldtype": "Link",
+   "label": "User ID",
+   "options": "User"
+  },
+  {
+   "default": "0",
+   "fieldname": "portal_access",
+   "fieldtype": "Check",
+   "label": "Portal Access Enabled"
+  }
+ ],
+ "image_field": "member_photo",
+ "links": [],
+ "modified": "2025-01-06 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Cooperative Management",
+ "name": "Cooperative Member",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Cooperative Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Cooperative Member",
+   "share": 1
+  }
+ ],
+ "search_fields": "first_name,last_name,member_id,mobile_number",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "full_name",
+ "track_changes": 1
+}

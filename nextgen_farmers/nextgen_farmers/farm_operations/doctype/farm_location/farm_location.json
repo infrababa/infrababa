@@ -1,0 +1,220 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:farm_name",
+ "creation": "2025-01-06 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "farm_name",
+  "farm_code",
+  "column_break_3",
+  "farm_manager",
+  "farm_status",
+  "location_details_section",
+  "address",
+  "region",
+  "district",
+  "column_break_9",
+  "gps_coordinates",
+  "total_land_area",
+  "land_area_unit",
+  "farm_characteristics_section",
+  "soil_type",
+  "water_source",
+  "column_break_16",
+  "irrigation_system",
+  "access_road_condition",
+  "facilities_section",
+  "facilities_description",
+  "equipment_available",
+  "notes_section",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "farm_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Farm Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "farm_code",
+   "fieldtype": "Data",
+   "label": "Farm Code",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "farm_manager",
+   "fieldtype": "Link",
+   "label": "Farm Manager",
+   "options": "Cooperative Member"
+  },
+  {
+   "default": "Active",
+   "fieldname": "farm_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Farm Status",
+   "options": "Active\nInactive\nUnder Development\nFallow",
+   "reqd": 1
+  },
+  {
+   "fieldname": "location_details_section",
+   "fieldtype": "Section Break",
+   "label": "Location Details"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "region",
+   "fieldtype": "Data",
+   "label": "Region"
+  },
+  {
+   "fieldname": "district",
+   "fieldtype": "Data",
+   "label": "District"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Latitude, Longitude",
+   "fieldname": "gps_coordinates",
+   "fieldtype": "Data",
+   "label": "GPS Coordinates"
+  },
+  {
+   "fieldname": "total_land_area",
+   "fieldtype": "Float",
+   "label": "Total Land Area",
+   "reqd": 1
+  },
+  {
+   "default": "Hectares",
+   "fieldname": "land_area_unit",
+   "fieldtype": "Select",
+   "label": "Land Area Unit",
+   "options": "Hectares\nAcres\nSquare Meters"
+  },
+  {
+   "fieldname": "farm_characteristics_section",
+   "fieldtype": "Section Break",
+   "label": "Farm Characteristics"
+  },
+  {
+   "fieldname": "soil_type",
+   "fieldtype": "Select",
+   "label": "Soil Type",
+   "options": "Clay\nSandy\nLoam\nSilt\nPeat\nChalk"
+  },
+  {
+   "fieldname": "water_source",
+   "fieldtype": "Select",
+   "label": "Water Source",
+   "options": "River\nWell\nBorehole\nRainwater\nDam\nMunicipal Supply"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "irrigation_system",
+   "fieldtype": "Select",
+   "label": "Irrigation System",
+   "options": "None\nDrip Irrigation\nSprinkler\nFlood Irrigation\nCenter Pivot"
+  },
+  {
+   "fieldname": "access_road_condition",
+   "fieldtype": "Select",
+   "label": "Access Road Condition",
+   "options": "Excellent\nGood\nFair\nPoor"
+  },
+  {
+   "fieldname": "facilities_section",
+   "fieldtype": "Section Break",
+   "label": "Facilities & Equipment"
+  },
+  {
+   "fieldname": "facilities_description",
+   "fieldtype": "Text",
+   "label": "Facilities Description"
+  },
+  {
+   "fieldname": "equipment_available",
+   "fieldtype": "Text",
+   "label": "Equipment Available"
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  }
+ ],
+ "links": [],
+ "modified": "2025-01-06 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Farm Operations",
+ "name": "Farm Location",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Cooperative Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Farm Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
