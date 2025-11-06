@@ -1,0 +1,55 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Docker
+docker-compose.override.yml
+Dockerfile
+.dockerignore
+
+# Documentation
+*.md
+!README.md
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Backups
+backups/
+*.sql.gz
+*.tar.gz
+
+# Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+node_modules/
+
+# Testing
+.coverage
+htmlcov/
+.tox/
+
+# Temporary
+temp/
+tmp/
+*.tmp

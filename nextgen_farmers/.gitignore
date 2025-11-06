@@ -11,3 +11,17 @@ dist
 __pycache__
 *.log
 sites/
+
+# Docker
+.env
+docker-compose.override.yml
+backups/
+restore/
+
+# SSL Certificates
+docker/nginx/ssl/*.pem
+docker/nginx/ssl/*.key
+
+# Logs
+logs/
+*.log
