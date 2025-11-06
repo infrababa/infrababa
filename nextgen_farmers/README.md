@@ -77,14 +77,53 @@ NextGen Farmers Hub empowers Ghana's youth through agriculture by:
 
 ## Installation
 
-### Prerequisites
+### 🐳 Quick Start with Docker (Recommended)
+
+**Deploy in minutes using Docker Compose!**
+
+```bash
+# Clone repository
+git clone https://github.com/your-org/nextgen_farmers.git
+cd nextgen_farmers
+
+# Configure environment
+cp .env.example .env
+nano .env  # Update passwords and settings
+
+# Deploy with one command
+docker-compose up -d
+
+# Monitor deployment
+docker-compose logs -f
+```
+
+**Access**: http://localhost (or your server IP)
+
+📖 **See [DOCKER_QUICKSTART.md](./DOCKER_QUICKSTART.md)** for complete guide
+🚀 **For AWS deployment, see [AWS_DEPLOYMENT.md](./AWS_DEPLOYMENT.md)**
+
+**Benefits:**
+- ✅ 10-minute setup
+- ✅ All services included (database, cache, workers)
+- ✅ Automated backups to S3
+- ✅ SSL certificate support
+- ✅ Production-ready configuration
+- ✅ Easy updates and rollback
+
+---
+
+### Traditional Installation (Frappe Bench)
+
+For manual installation without Docker:
+
+#### Prerequisites
 - Frappe Bench installed
 - ERPNext (version 14 or higher recommended)
 - Python 3.10+
 - MariaDB 10.6+
 - Node.js 16+
 
-### Setup Instructions
+#### Setup Instructions
 
 1. **Get the app from GitHub**
 ```bash
