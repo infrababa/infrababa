@@ -1,0 +1,37 @@
+FROM frappe/erpnext:v15.20.1
+
+# Metadata
+LABEL maintainer="NextGen Farmers Hub <admin@nextgenfarmershub.com>"
+LABEL description="NextGen Farmers Hub - ERPNext Custom App Development Image"
+
+# Set working directory
+WORKDIR /home/frappe/frappe-bench
+
+# Install additional Python packages
+RUN pip install --no-cache-dir \
+    requests \
+    cryptography \
+    python-jose \
+    phonenumbers
+
+# Install development tools
+RUN pip install --no-cache-dir \
+    ipython \
+    pytest \
+    pytest-cov \
+    black \
+    pylint
+
+# Copy custom app (for production builds)
+# For development, use volume mount instead
+# COPY --chown=frappe:frappe ./apps/nextgen_farmers ./apps/nextgen_farmers
+
+# Expose ports
+EXPOSE 8000 9000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD curl -f http://localhost:8000 || exit 1
+
+# Default command
+CMD ["bench", "start"]

@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Frappe
+sites/
+.DS_Store
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Database
+*.sql
+*.db
+*.sqlite3
+
+# Environment
+.env
+.env.local
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+docs/
+*.md
+
+# OS
+.DS_Store
+Thumbs.db

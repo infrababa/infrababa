@@ -1,0 +1,2 @@
+# Custom Apps Directory
+Place your nextgen_farmers app here after creating it with: docker exec -it nextgen-backend bench new-app nextgen_farmers

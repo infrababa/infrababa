@@ -1,0 +1,126 @@
+version: '3.8'
+
+services:
+  # MariaDB Database
+  mariadb:
+    image: mariadb:10.6
+    container_name: nextgen-mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: nextgen_db
+      MYSQL_USER: nextgen_user
+      MYSQL_PASSWORD: nextgen_pass
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    networks:
+      - nextgen-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: nextgen-redis
+    networks:
+      - nextgen-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Frappe/ERPNext Backend
+  backend:
+    image: frappe/erpnext:v15.20.1
+    container_name: nextgen-backend
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      - FRAPPE_SITE_NAME=nextgenfarmers.local
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - REDIS_CACHE=redis:6379/0
+      - REDIS_QUEUE=redis:6379/1
+      - REDIS_SOCKETIO=redis:6379/2
+    volumes:
+      - ./apps/nextgen_farmers:/home/frappe/frappe-bench/apps/nextgen_farmers:cached
+      - sites-data:/home/frappe/frappe-bench/sites
+      - ./scripts:/scripts:ro
+    working_dir: /home/frappe/frappe-bench
+    ports:
+      - "8000:8000"    # Web interface
+      - "9000:9000"    # Socketio
+    networks:
+      - nextgen-network
+    command: >
+      bash -c "
+        if [ ! -f /home/frappe/frappe-bench/sites/nextgenfarmers.local/site_config.json ]; then
+          echo '=== First run: Initializing NextGen Farmers Hub site ===';
+          bench new-site nextgenfarmers.local
+            --db-host mariadb
+            --db-root-password rootpassword
+            --admin-password admin
+            --no-mariadb-socket;
+          bench --site nextgenfarmers.local install-app erpnext;
+          bench --site nextgenfarmers.local install-app agriculture;
+          if [ -d /home/frappe/frappe-bench/apps/nextgen_farmers ]; then
+            echo '=== Installing NextGen Farmers custom app ===';
+            bench --site nextgenfarmers.local install-app nextgen_farmers;
+          fi;
+          echo '=== Initialization complete! ===';
+        fi;
+        echo '=== Starting Frappe bench ===';
+        bench start;
+      "
+
+  # Frappe Scheduler (Background jobs)
+  scheduler:
+    image: frappe/erpnext:v15.20.1
+    container_name: nextgen-scheduler
+    depends_on:
+      - backend
+    environment:
+      - FRAPPE_SITE_NAME=nextgenfarmers.local
+      - DB_HOST=mariadb
+      - REDIS_CACHE=redis:6379/0
+      - REDIS_QUEUE=redis:6379/1
+    volumes:
+      - ./apps/nextgen_farmers:/home/frappe/frappe-bench/apps/nextgen_farmers:cached
+      - sites-data:/home/frappe/frappe-bench/sites
+    working_dir: /home/frappe/frappe-bench
+    networks:
+      - nextgen-network
+    command: bench schedule
+
+  # Frappe Worker (Queue processing)
+  worker:
+    image: frappe/erpnext:v15.20.1
+    container_name: nextgen-worker
+    depends_on:
+      - backend
+    environment:
+      - FRAPPE_SITE_NAME=nextgenfarmers.local
+      - DB_HOST=mariadb
+      - REDIS_CACHE=redis:6379/0
+      - REDIS_QUEUE=redis:6379/1
+    volumes:
+      - ./apps/nextgen_farmers:/home/frappe/frappe-bench/apps/nextgen_farmers:cached
+      - sites-data:/home/frappe/frappe-bench/sites
+    working_dir: /home/frappe/frappe-bench
+    networks:
+      - nextgen-network
+    command: bench worker --queue default,short,long
+
+volumes:
+  mariadb-data:
+  sites-data:
+
+networks:
+  nextgen-network:
+    driver: bridge
